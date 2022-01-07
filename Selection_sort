@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+
+    void selection_sort(int *A , int n)
+    {
+        for(int i=0; i <=(n-1); i++)
+        {
+            int index_of_min , temp;
+            index_of_min=i;
+            for(int j=i+1; j<n;j++)
+            {
+                if(A[j]<A[index_of_min])
+                {
+                    index_of_min=j;
+                }
+                
+            }
+            temp=A[i];
+            A[i]=A[index_of_min];
+            A[index_of_min]=temp;
+        }
+    }
+    
+void print_array(int *A , int n)
+{
+    for(int i=0; i<n;i++)
+    {
+        cout<<A[i]<<endl;
+    }
+    cout<<"\n";
+}
+
+int main()
+{
+    int n=6;
+    int A[]={6,7,1,2,0,3};
+    print_array(A,n);
+    selection_sort(A,n);
+    print_array(A,n);
+    
+    return 0;
+}
